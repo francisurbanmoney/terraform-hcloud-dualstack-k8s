@@ -2,8 +2,8 @@
 set -euo pipefail
 
 # Install network plugin
-kubectl apply -f wigglenet.yaml
-
+# kubectl apply -f wigglenet.yaml
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 # Install cloud provider
 if [[ -z "${HCLOUD_NETWORK}" ]]; then
     kubectl -n kube-system create secret generic hcloud \
